@@ -1,0 +1,16 @@
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="room-number">Room number:</label>
+        <input type="text" id="room-number" name="room-number">
+    </div>
+    <div>
+        <label for="start-time">Room number:</label>
+        <input type="datetime-local" id="start-time" name="start-time">
+    </div>
+    <div>
+        <label for="end-time">Room number:</label>
+        <input type="datetime-local" id="end-time" name="end-time">
+    </div>
+    <button type="submit">Забронювати</button>
+</form>
