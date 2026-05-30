@@ -10,10 +10,13 @@
 <body>
     <a href="{% url 'rooms-list' %}">Список кімнат</a>
     <a href="{% url 'book-room' %}">Бронювання</a>
+    <a href="{% url 'register' %}">Реєстрація</a>
+    <a href="{% url 'logout' %}">Логаут</a>
+    <a href="{% url 'login'%}">Залогінитися</a>
     {% if request.user.is_authenticated %}
        <h2> Hello {{ request.user.username }}</h2>
         {% else %}
-        <h2> Hello anonymous </h2>
+       <h2> Hello anonymous </h2>
     {% endif %}
     {% block content %}
 

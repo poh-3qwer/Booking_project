@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 
 
 class Room(models.Model):
@@ -11,7 +11,7 @@ class Room(models.Model):
         return f'Room #{self.number} - {self.capacity}'
     
 class Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="user")
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="room")
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
